@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phiếu đăng ký tham gia chương trình khuyến mãi</title>
+    <link rel="stylesheet" href="style.css" />
+    <script>
+      function Register() {
+        const form = document.forms["registerForm"];
+        const errors = [];
+
+        // Kiểm tra thông tin từng trường
+        if (!form["txtFullName"].value.trim())
+          errors.push("Họ và tên không được để trống!");
+        if (!form["txtAddress"].value.trim())
+          errors.push("Địa chỉ không được để trống!");
+        if (!form["txtPhone"].value.trim())
+          errors.push("Số điện thoại không được để trống!");
+        if (!form["txtMale"].checked && !form["txtFemale"].checked)
+          errors.push("Vui lòng chọn giới tính!");
+        if (!form["txtNumber"].value.trim())
+          errors.push("Vui lòng nhập số người dự đoán!");
+
+        if (errors.length > 0) {
+          alert(errors.join("\n"));
+        } else {
+          document.getElementById("tb").innerText =
+            "Bạn đã đăng ký thành công!";
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <td align="center" class="header">
+          Phiếu đăng ký tham gia chương trình khuyến mãi
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <form name="registerForm">
+            <table>
+              <tr>
+                <td>Họ và tên</td>
+                <td><input type="text" id="txtFullName" required /></td>
+              </tr>
+              <tr>
+                <td>Địa chỉ</td>
+                <td><input type="text" id="txtAddress" required /></td>
+              </tr>
+              <tr>
+                <td>Điện thoại</td>
+                <td><input type="tel" id="txtPhone" required /></td>
+              </tr>
+              <tr>
+                <td>Phái</td>
+                <td>
+                  Nam:
+                  <input type="radio" name="txtSex" id="txtMale" value="Nam" />
+                  Nữ:
+                  <input type="radio" name="txtSex" id="txtFemale" value="Nữ" />
+                </td>
+              </tr>
+              <tr>
+                <td>Nghề nghiệp</td>
+                <td>
+                  <select name="job" id="cboJob">
+                    <option value="doctor">Bác sĩ</option>
+                    <option value="engineer">Kĩ sư</option>
+                    <option value="teacher">Giáo viên</option>
+                    <option value="other">Khác</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td>Chọn sản phẩm tham gia</td>
+                <td>
+                  <select name="product" id="cboProduct">
+                    <option value="1">Kem đánh răng</option>
+                    <option value="2">Bột giặt</option>
+                    <option value="3">Dầu gội đầu</option>
+                    <option value="4">Sữa tắm</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td>Số người dự đoán</td>
+                <td><input type="number" id="txtNumber" required /></td>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <button type="button" onclick="Register()">Đồng ý</button>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <span id="tb"></span>
+                </td>
+              </tr>
+            </table>
+          </form>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
