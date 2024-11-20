@@ -1,12 +1,10 @@
-/* Định dạng cho toàn bộ trang */
 body {
   font-family: Arial, sans-serif;
   background-color: #f9f9f9;
 }
 
-/* Định dạng bảng chính */
 table {
-  margin: 20px auto;
+  margin: 25px auto;
   border-collapse: collapse;
   width: 500px;
   background-color: #e8f5e9;
@@ -17,19 +15,16 @@ td {
   padding: 10px;
 }
 
-/* Định dạng phần tiêu đề */
 .header {
   font-size: 20px;
   color: #00aaff;
   font-weight: bold;
 }
 
-/* Định dạng ô có colspan */
 td[colspan="2"] {
   text-align: center;
 }
 
-/* Định dạng cho thông báo kết quả */
 #tb {
   color: green;
   font-weight: bold;
